@@ -31,7 +31,9 @@ private extension NiftyInject {
 /// Also fetches a value from the container.
 /// Fetching prior to registration a value is a programmer error.
 @propertyWrapper
-struct Register<Component> {
+public struct Register<Component> {
+
+  public init() {}
 
   public var wrappedValue: Component {
     get { NiftyInject.get() }
@@ -43,7 +45,9 @@ struct Register<Component> {
 /// Fetches a value from the container.
 /// Fetching prior to registration a value is a programmer error.
 @propertyWrapper
-struct Resolve<Component> {
+public struct Resolve<Component> {
+
+  public init() {}
 
   public var wrappedValue: Component {
     get { NiftyInject.get() }
@@ -53,7 +57,9 @@ struct Resolve<Component> {
 
 /// Fetches an optional value from the container.
 @propertyWrapper
-struct ResolveOptional<Component> {
+public struct ResolveOptional<Component> {
+
+  public init() {}
 
   public var wrappedValue: Component? {
     get { NiftyInject.getOptional() }
